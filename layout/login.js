@@ -1,6 +1,38 @@
 import Input from "../components/input"
+import { useState } from "react"
+import { useRouter } from "next/router"
 
 export default function Login() {
+
+  const Login = {
+    email:'',
+    senha:''
+  }
+
+  const Router = useRouter()
+  const [User, setUser] = useState(Login)
+
+  function onChange(event) {
+    const {name, value} = event.target
+
+    setUser({...User, [name]: value})
+    
+  }
+
+  function onSubmit(event) {
+    event.preventDefault()
+  }
+
+  function validationUser() {
+    if(User.email == 'santosfernando2377@gmail.com' && User.senha == '123') {
+      setTimeout(() => {
+        Router.push(`./tasks?email=${User.email}&senha=${User.senha}`)
+      }, 3000);
+    } else {
+      console.log('Email ou senha incorreto')
+    }
+  }
+
     return (
         <main>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -13,7 +45,7 @@ export default function Login() {
         <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> start your 14-day free trial </a>
       </p>
     </div>
-    <form className="mt-8 space-y-6" action="#" method="POST">
+    <form onSubmit={onSubmit} className="mt-8 space-y-6">
       <input type="hidden" name="remember" value="true"/>
       <div className="rounded-md shadow-sm -space-y-px">
         <Input
@@ -23,6 +55,7 @@ export default function Login() {
         autoComplete="email"
         placeholder="Email"
         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm my-2"
+        onChange={onChange}
         />
         <Input
         label="Senha"
@@ -31,6 +64,7 @@ export default function Login() {
         autoComplete="password"
         placeholder="Senha"
         className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm my-2"
+        onChange={onChange}
         />
       </div>
 
@@ -46,7 +80,10 @@ export default function Login() {
       </div>
 
       <div>
-        <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button type="submit" 
+        className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        onClick={validationUser}
+        >
           <span className="absolute left-0 inset-y-0 flex items-center pl-3">
             <svg className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
