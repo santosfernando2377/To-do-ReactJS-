@@ -1,18 +1,26 @@
-import Input from "../components/input"
+import Input from "../components/login/input"
 import { useState } from "react"
 import { useRouter } from "next/router"
+import axios from "axios"
 
 export default function Login() {
-
+  
   const Login = {
+    email:'',
+    senha:''
+  }
+
+  const Verification = {
     email:'',
     senha:''
   }
 
   const Router = useRouter()
   const [User, setUser] = useState(Login)
+  const [Userdb, setUserDb] = useState(Verification)
 
   function onChange(event) {
+
     const {name, value} = event.target
 
     setUser({...User, [name]: value})
@@ -20,29 +28,64 @@ export default function Login() {
   }
 
   function onSubmit(event) {
+    
     event.preventDefault()
+
+  }
+
+  function searchUser() {
+    
+    axios.get('http://localhost:3001/usuario',{
+      params:{
+        email: User.email,
+      }
+      
+    }) 
+
+      .then((response) => {
+        const resposta = response.data[0]
+        setUserDb(resposta)
+      
+      })
+      
+      .catch((response) => {
+        console.log(response)
+
+      })
   }
 
   function validationUser() {
-    if(User.email == 'santosfernando2377@gmail.com' && User.senha == '123') {
+    searchUser()
+    if(User.email == Userdb.email && User.senha == Userdb.senha) {
+
+      const expired = 9000000
+      
+      localStorage.setItem(`email`,`${Userdb.email}`, `${expired}`)
+      localStorage.setItem(`senha`,`${Userdb.senha}`, `${expired}`)
+
       setTimeout(() => {
-        Router.push(`./tasks?email=${User.email}&senha=${User.senha}`)
+        Router.push(`./tasks`)
       }, 3000);
+
     } else {
+
       console.log('Email ou senha incorreto')
+
     }
+    
   }
 
     return (
+      <>
         <main>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div className="max-w-md w-full space-y-8">
     <div>
       <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow"/>
-      <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+      <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Faça o login em sua conta</h2>
       <p className="mt-2 text-center text-sm text-gray-600">
-        Or
-        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> start your 14-day free trial </a>
+        Ou
+        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Cadastre-se aqui mesmo </a>
       </p>
     </div>
     <form onSubmit={onSubmit} className="mt-8 space-y-6">
@@ -75,7 +118,7 @@ export default function Login() {
         </div>
 
         <div className="text-sm">
-          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
+          <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500"> Esqueci minha senha? </a>
         </div>
       </div>
 
@@ -89,12 +132,13 @@ export default function Login() {
               <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
             </svg>
           </span>
-          Sign in
+          Login
         </button>
       </div>
     </form>
   </div>
 </div>
       </main>
+      </>
     )
 }

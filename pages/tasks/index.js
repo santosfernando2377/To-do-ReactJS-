@@ -1,17 +1,27 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react"
+import { useRouter } from "next/router"
+import Tasks from "../../layout/tasks"
 
 export default function Main(){
 
     const Router = useRouter()
+    const [user, setUser] = useState([])
 
-    const ValidateUser = () => {
-        let params = Router.query
-    }
-    ValidateUser()
+    useEffect(() => {
+        const email = localStorage.getItem('email')
+        const senha = localStorage.getItem('senha')
+
+        setUser([email, senha])
+
+       const validate = function validate() {
+            if(email == '' || email == null || !email && senha == '' || senha == undefined || !senha ) {
+                Router.push('/')
+            }
+        }
+        validate()
+    }, [])
+
     return (
-        <>
-            <h1>Login realizado com sucesso!</h1>
-        </>
+        <Tasks/>
     )
 }

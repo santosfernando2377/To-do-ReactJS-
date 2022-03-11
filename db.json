@@ -1,9 +1,8 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
+    "usuario": [
+      { "id": 1, "email": "santosfernando2377@gmail.com", "senha": "Fernando34778929" }
     ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+    "tarefa": [
+      { "id": 1, "tarefa": "some comment", "situacao": 1, "usuarioId": 1 }
+    ]
   }
