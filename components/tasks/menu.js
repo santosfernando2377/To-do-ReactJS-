@@ -1,4 +1,8 @@
+import { useRouter } from "next/router"
+
 export default function menu() {
+
+    const Router = useRouter();
     
     let toggle = false
 
@@ -16,6 +20,11 @@ export default function menu() {
             elemento.style.display = 'initial'
             
         }
+    }
+
+    function logoff() {
+      localStorage.clear()
+      Router.push('/')
     }
     
     return (
@@ -48,6 +57,8 @@ export default function menu() {
 
             <a href="/tasks/create" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Criar Tarefa</a>
 
+            <a href="#" onClick={logoff} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sair</a>
+
           </div>
         </div>
       </div>
@@ -63,6 +74,8 @@ export default function menu() {
       <a href="/tasks" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tela Inícial</a>
 
       <a href="/tasks/create" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Criar Tarefa</a>
+
+      <a href="#" onClick={logoff} className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sair</a>
 
     </div>
   </div>

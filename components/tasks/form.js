@@ -45,7 +45,6 @@ export default function Form() {
                 <input 
                     type="text" 
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    placeholder="" 
                     id="nome" 
                     name="nome"
                     onChange={onChange}
@@ -54,15 +53,29 @@ export default function Form() {
               <label className="block">
                 <span className="text-gray-700">Descrição</span>
                 <input 
-                    type="email" 
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                    placeholder="john@example.com" 
+                    type="text" 
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" 
                     id="descricao" 
                     name="descricao"
                     onChange={onChange}
                 />
               </label>
-              <button onClick={onSend}>Enviar</button>
+              <button className="
+                w-full flex 
+                items-center 
+                justify-center 
+                my-3 
+                px-8 
+                py-3 
+                border 
+                border-transparent 
+                text-base 
+                font-medium 
+                rounded-md 
+                text-white 
+                bg-indigo-600 
+                hover:bg-indigo-700 
+                " onClick={onSend}>Enviar</button>
             </div>
           </div>
         </div>
