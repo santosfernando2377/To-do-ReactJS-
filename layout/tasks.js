@@ -40,7 +40,7 @@ export default function Tasks() {
                     key={key}
                     label={dados.titulo}
                     description={dados.tarefa}
-                    idTask={dados.idtasks}/>
+                    idTask={dados.id}/>
                 ))}
             </List>
         </>

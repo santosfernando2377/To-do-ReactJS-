@@ -16,62 +16,43 @@
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
-      "idtasks": "123",
+      "task": "123",
       "userEmail": "santosfernando2377@gmail.com",
       "id": 1
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
-      "idtasks": "123",
+      "task": "123",
       "userEmail": "santosfernando2377@gmail.com",
       "id": 2
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
-      "idtasks": "123",
+      "task": "123",
       "userEmail": "santosfernando2377@gmail.com",
       "id": 3
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
-      "idtasks": "123",
+      "task": "123",
       "userEmail": "santosfernando2377@gmail.com",
       "id": 4
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
-      "idtasks": "123",
+      "task": "123",
       "userEmail": "santosfernando2388@gmail.com",
       "id": 5
-    },
-    {
-      "titulo": "tarefa 2",
-      "tarefa": "tarefa 2",
-      "idtasks": "123",
-      "userEmail": "santosfernando2388@gmail.com",
-      "id": 6
     },
     {
       "titulo": "teste",
       "tarefa": "teste@test.com",
       "userEmail": "santosfernando2377@gmail.com",
       "id": 7
-    },
-    {
-      "titulo": "teste",
-      "tarefa": "teste",
-      "userEmail": "santosfernando001@gmail.com",
-      "id": 8
-    },
-    {
-      "titulo": "teste1",
-      "tarefa": "teste1",
-      "userEmail": "santosfernando001@gmail.com",
-      "id": 9
     }
   ]
 }

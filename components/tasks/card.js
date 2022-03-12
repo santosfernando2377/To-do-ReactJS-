@@ -40,7 +40,7 @@ export default function Card(props) {
             <p className="text-base h-12 font-light flex flex-row flex-wrap overflow-x-hidden overflow-y-scroll my-3">
                 {props.description}
             </p>
-            <a href={props.idTask} target="_self">
+            <a href={`http://localhost:3000/tasks/viewtask?task=${props.idTask}`} target="_self">
                 <button className="
                 w-full flex 
                 items-center 
