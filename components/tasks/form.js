@@ -1,7 +1,10 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
 import axios from "axios"
 
 export default function Form() {
+
+    const Router = useRouter()
     
     const Task = {
         nome: '',
@@ -27,7 +30,7 @@ export default function Form() {
             userEmail: localStorage.getItem('email')
         })
         .then((response) => {
-            console.log('Foi criado a tarefa com sucesso', response)
+            Router.push('/tasks/')
         })
         .catch((reponse) =>{
             console.log(reponse)
