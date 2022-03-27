@@ -2,14 +2,8 @@
   "usuario": [
     {
       "id": 1,
-      "email": "santosfernando2377@gmail.com",
-      "senha": "Fernando34778929"
-    },
-    {
-      "email": "santosfernando001@gmail.com",
-      "senha": "123",
-      "nome": "Fernando Soares",
-      "id": 2
+      "email": "fernando@gmail.com",
+      "senha": "12345678"
     }
   ],
   "tarefa": [
@@ -17,41 +11,41 @@
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
       "task": "123",
-      "userEmail": "santosfernando2377@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 1
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
       "task": "123",
-      "userEmail": "santosfernando2377@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 2
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
       "task": "123",
-      "userEmail": "santosfernando2377@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 3
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
       "task": "123",
-      "userEmail": "santosfernando2377@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 4
     },
     {
       "titulo": "tarefa 2",
       "tarefa": "tarefa 2",
       "task": "123",
-      "userEmail": "santosfernando2388@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 5
     },
     {
       "titulo": "teste",
       "tarefa": "teste@test.com",
-      "userEmail": "santosfernando2377@gmail.com",
+      "userEmail": "fernando@gmail.com",
       "id": 7
     }
   ]
