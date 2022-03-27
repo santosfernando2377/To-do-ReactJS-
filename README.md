@@ -1,34 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# To-do Day
 
-## Getting Started
+Esse repositório é um sistema de To-do. O projeto foi criado com o framework NextJS, framework Tailwind CSS, Axios e JSON-Server.
 
-First, run the development server:
+## Como rodar o To-do Day?
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Para rodar o projeto faça um clone do repositório `'git clone https://github.com/santosfernando2377/To-do-day.git'`. Agora em um terminal digite o seguinte comando `'npm install'`, esse comando vai instalar todas as depedências necessárias para que o projeto possa ser executado.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Após instalar as depedências no terminal digite o seguinte comando `'npm install -g json-server'`, o Json-server é uma fake API Rest que utiliza a estrutura de JSON como uma especie de API e banco de dados. Agora para executar o sistema digite no terminal os comandos `'npm run build'`, para realizar o build do sistema e depois execute o comando `'npm run start'` para executar o build do projeto. Agora é necessário subir o JSON-Server, execute o seguinte comando no terminal `'json-server db.json'` e o nosso back-end será executado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Requisitos
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Para que as orientações acima funcione é necessário que você instale o [NodeJS](https://nodejs.org/en/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
